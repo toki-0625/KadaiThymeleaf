@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>kadaiThymeleaf</title>
+</head>
+<body>
+    <h1 th:text="#{content.maintitle}"></h1>
+    <h2 th:text="#{content.inputTitle}"></h2>
+    <p th:text="#{content.message}"></p>
+    <p th:if="${param.previous} != null" th:text="#{content.previousResult1} + ${param.previous[0]} + #{content.previousResult2}"></p>
+ 
+    <form method="post" action="/output">
+        <input type="text" name="val">
+        <button type="submit">送信</button>
+    </form>
+</body>
+</html>
